@@ -1,0 +1,51 @@
+  <!doctype html>
+  <!--
+   This page is shown when the extension button is clicked, because the
+   "browser_action" field in manifest.json contains the "default_popup" key with
+   value "popup.html".
+   -->
+  <html>
+    <head>
+      <title>OPTC DB Character Searcher</title>
+      <style>
+        body {
+          font-family: "Open Sans", "Lucida Grande", Tahoma, sans-serif;
+          font-size: 100%;
+        }
+        .text-center {
+          text-align: center;
+        }
+        .header {
+          font-size: 20;
+        }
+        .header-under {
+          color: white;
+          margin-top: -15px;
+        }
+        .subtitle {
+          color: grey;
+          margin-top: -1px;
+        }
+        .blue {
+            background-color: #85C1F5;
+        }
+      </style>
+
+      <script src="jquery.js"></script>
+      <script src="popup.js"></script>
+
+    </head>
+    <body class="blue">
+      <!-- Page header -->
+      <p class="text-center header"><strong>OPTC DB Character Searcher</strong></p>
+      <h6 class="text-center header-under">Version 0.1</h6>
+      <!-- .\Page header -->
+      <div>
+        <!-- Page searcher -->
+        <input type="text" data-name="char_name" placeholder="Character's name"/>
+        <h6 class="text-center subtitle">(Press ENTER to search)</h6>
+        <!-- .\Page searcher -->
+      </div>
+    </body>
+  </html>
+
