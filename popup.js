@@ -8,6 +8,8 @@
 
 // Adding keyupress event when the windows of the extension is opened
 document.addEventListener('DOMContentLoaded', function () {
+	// Focus the input text once the popup is opened.
+	$('[data-name=char_name]').focus();
 	// Get input text with data-name = char_name and bind the keypress event to it.
 	// The event  will be triggered when enter is pressed.
 	$('[data-name=char_name]').keypress(function(event) {
