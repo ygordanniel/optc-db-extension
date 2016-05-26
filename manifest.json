@@ -3,7 +3,7 @@
 
   "name": "OPTC DB Character Searcher",
   "description": "Simples extension to easily research a Character at http://optc-db.github.io/",
-  "version": "0.1",
+  "version": "0.1.1",
 
   "browser_action": {
     "default_icon": "icon.png",
