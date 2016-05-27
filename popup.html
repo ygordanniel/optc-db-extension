@@ -7,7 +7,11 @@
   <html>
     <head>
       <title>OPTC DB Character Searcher</title>
+
+      <link rel="stylesheet" type="text/css" href="jquery-ui.css">
+
       <style>
+        /*Style CSS*/
         body {
           font-family: "Open Sans", "Lucida Grande", Tahoma, sans-serif;
           font-size: 100%;
@@ -25,6 +29,7 @@
         .subtitle {
           color: grey;
           margin-top: 1px;
+          margin-bottom: 1px;
         }
         .blue {
             background-color: #85C1F5;
@@ -38,9 +43,9 @@
     <body class="blue">
       <!-- Page header -->
       <p class="text-center header"><strong>OPTC DB Character Searcher</strong></p>
-      <h6 class="text-center header-under">Version 0.1.1</h6>
+      <h6 class="text-center header-under">Version 0.1.2</h6>
       <!-- .\Page header -->
-      <div>
+      <div class="text-center">
         <!-- Page searcher -->
         <input type="text" data-name="char_name" placeholder="Character's name"/>
         <h6 class="text-center subtitle">(Press ENTER to search)</h6>

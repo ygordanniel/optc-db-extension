@@ -18,6 +18,9 @@ document.addEventListener('DOMContentLoaded', function () {
 			// Call function passing the text typed on the input text
 			charSearch($('[data-name=char_name]').val());
 		}
+	})
+	.click(function() {
+		$('[data-name=tooltip]').show();
 	});
 });
 
