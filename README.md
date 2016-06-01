@@ -1,6 +1,6 @@
 # OPTC Player Helper
 
-Simple  chrome extension to search characters on OPTC DB.
+Simple chrome extension to ~~search characters on OPTC DB~~ make OPTC players' life a little bit easier.
 
 [Download](https://chrome.google.com/webstore/detail/optc-db-character-searche/bonlajhafobfegenljlmpnmkodpgfpmc)
 
@@ -15,7 +15,8 @@ Any problems, doubts, ideas or sugestions should be said directly to me via the 
   * now focusing on input text
 * v0.1.2
   * permissions changed, now is restricted to https://optc-db.github.io/
-  
+* v0.2
+  * implemented [Turtle Time API](https://optctimer.com)
 ## Additional Information
 
 I'm currently developing this extension by myself and I'm looking for people with good ideas to come join me. If you wanna talk about ideas and maybe help me with the development, hit me up here on [my profile](https://github.com/ygordanniel) or via email: ygordanniel@gmail.com
