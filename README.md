@@ -1,4 +1,4 @@
-# OPTC-DB Helper
+# OPTC Player Helper
 
 Simple  chrome extension to search characters on OPTC DB.
 
