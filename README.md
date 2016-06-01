@@ -18,6 +18,16 @@ Any problems, doubts, ideas or sugestions should be said directly to me via the 
 * v0.2
   * implemented [Turtle Time API](https://optctimer.com)
 
+##Thank you note.
+
+I'd like to send a special thank
+
+The [OPTC-DB Team](https://github.com/optc-db/optc-db.github.io) for the amazing job keeping all the data up to date, I know how hard that can be. In particular to /u/Zee_n1 for talking to me when I decided to make this extension and giving me the blessing to do so.
+
+The devs from [Turtle Time](https://optctimer.com) too, for answering my email with the API request.
+
+You guys are **AWESOME**!
+
 ## Additional Information
 
 I'm currently developing this extension by myself and I'm looking for people with good ideas to come join me. If you wanna talk about ideas and maybe help me with the development, hit me up here on [my profile](https://github.com/ygordanniel) or via email: ygordanniel@gmail.com
