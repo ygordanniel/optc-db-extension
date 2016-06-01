@@ -7,7 +7,7 @@ Simple  chrome extension to search characters on OPTC DB.
 ## Disclaimer
 
 This extention is an independent work and IT'S NOT associated with the [OPTC-DB Team](https://github.com/optc-db/optc-db.github.io).
-Any problems, doubts, ideas or sugestions show be said direct to me via the [reddit thread](https://www.reddit.com/r/OnePieceTC/comments/4l6oxz/optc_db_chrome_extension/) or [reddit profile](https://www.reddit.com/user/ygaum).
+Any problems, doubts, ideas or sugestions should be said directly to me via the [reddit thread](https://www.reddit.com/r/OnePieceTC/comments/4l6oxz/optc_db_chrome_extension/) or [reddit profile](https://www.reddit.com/user/ygaum).
 
 ## Updates
 
