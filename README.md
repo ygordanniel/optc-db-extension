@@ -18,7 +18,7 @@ Any problems, doubts, ideas or sugestions should be said directly to me via the 
 * v0.2
   * implemented [Turtle Time API](https://optctimer.com)
 
-##Thank you note.
+##Thank you note
 
 I'd like to send a special thank
 
