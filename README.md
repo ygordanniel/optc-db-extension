@@ -24,6 +24,8 @@ I'm currently developing this extension by myself and I'm looking for people wit
 
 ## TODO list
 
-- [ ] Implement [Turtle Time API](https://www.reddit.com/r/OnePieceTC/comments/4lsd3y/turtle_time_api_released_for_developers/).
+- [x] Implement [Turtle Time API](https://www.reddit.com/r/OnePieceTC/comments/4lsd3y/turtle_time_api_released_for_developers/).
+- [ ] Implement notification when turtle time is close.
+- [ ] Allow time format selection for 12 and 24 hour.
 - [ ] Study the extension permission to use only the necessary.
 - [ ] Think of new ideas to help even more the community.
