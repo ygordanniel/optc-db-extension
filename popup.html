@@ -6,51 +6,43 @@
    -->
   <html>
     <head>
-      <title>OPTC DB Character Searcher</title>
+      <title>OPTC Player Helper</title>
 
-      <link rel="stylesheet" type="text/css" href="jquery-ui.css">
+      <link rel="stylesheet" type="text/css" href="loader/loader.css">
+      <link rel="stylesheet" type="text/css" href="app/css/app.css">
 
-      <style>
-        /*Style CSS*/
-        body {
-          font-family: "Open Sans", "Lucida Grande", Tahoma, sans-serif;
-          font-size: 100%;
-        }
-        .text-center {
-          text-align: center;
-        }
-        .header {
-          font-size: 20;
-        }
-        .header-under {
-          color: white;
-          margin-top: -15px;
-        }
-        .subtitle {
-          color: grey;
-          margin-top: 1px;
-          margin-bottom: 1px;
-        }
-        .blue {
-            background-color: #85C1F5;
-        }
-      </style>
-
-      <script src="jquery.js"></script>
-      <script src="popup.js"></script>
+      <script src="app/js/jquery.js"></script>
+      <script src="app/js/popup.js"></script>
+      <script src="app/js/turtle-time.js"></script>
 
     </head>
-    <body class="blue">
+    <body class="background-blue">
       <!-- Page header -->
-      <p class="text-center header"><strong>OPTC DB Character Searcher</strong></p>
-      <h6 class="text-center header-under">Version 0.1.2</h6>
+      <p class="text-center header"><strong>OPTC Player Helper</strong></p>
+      <h6 class="text-center header-under">Version 0.2</h6>
       <!-- .\Page header -->
       <div class="text-center">
         <!-- Page searcher -->
+        <h4 class="text-white" style="margin-bottom: 0px">Search Character</h4>
         <input type="text" data-name="char_name" placeholder="Character's name"/>
         <h6 class="text-center subtitle">(Press ENTER to search)</h6>
         <!-- .\Page searcher -->
       </div>
+      <div id="turtleTime" style="text-align: center;">
+        <p class="text-center"><h4 class="text-white" style="margin-bottom: -15px">Turtle Time</h4></p>
+        <input type="number" data-action="userDigit" placeholder="6th digit of ID" min="0" max="9" style="width: 95px;">
+        <fieldset>
+          <legend>Version</legend>
+          <form id="versionForm">
+            <input type="radio" name="version" value="japan" checked/>Japan<br>
+            <input type="radio" name="version" value="global"/>Global<br>
+        </form>
+        </fieldset>
+        <br>
+        <div id="turtleTimeTable"></div>
+      </div>
+      <!-- Loader Div -->
+      <div class="modal"><!-- Place at bottom of page --></div>
     </body>
   </html>
 

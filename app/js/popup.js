@@ -10,6 +10,19 @@
 document.addEventListener('DOMContentLoaded', function () {
 	// Focus the input text once the popup is opened.
 	$('[data-name=char_name]').focus();
+
+	$('#turtleTimeTable').html('Table should go here');
+
+	makeTurtleTimeAPIRequest();
+
+	$('[data-action=userDigit]').change(function() {
+		makeTurtleTimeAPIRequest();
+	});
+
+	$('#versionForm').change(function() {
+		makeTurtleTimeAPIRequest();
+	});
+
 	// Get input text with data-name = char_name and bind the keypress event to it.
 	// The event  will be triggered when enter is pressed.
 	$('[data-name=char_name]').keypress(function(event) {
@@ -18,9 +31,13 @@ document.addEventListener('DOMContentLoaded', function () {
 			// Call function passing the text typed on the input text
 			charSearch($('[data-name=char_name]').val());
 		}
-	})
-	.click(function() {
-		$('[data-name=tooltip]').show();
+	});
+
+	$body = $('body');
+
+	$(document).on({
+	    ajaxStart: function() { $body.addClass("loading");    },
+	    ajaxStop: function() { $body.removeClass("loading"); }    
 	});
 });
 

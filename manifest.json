@@ -1,21 +1,17 @@
 {
   "manifest_version": 2,
 
-  "name": "OPTC DB Character Searcher",
+  "name": "OPTC Player Helper",
   "description": "Simples extension to easily research a Character at http://optc-db.github.io/",
-  "version": "0.1.2",
+  "version": "0.2",
 
   "browser_action": {
     "default_icon": "icon.png",
     "default_popup": "popup.html",
-    "default_title": "Click here to search a character on OPTC DB."
+    "default_title": "OPTC Player Helper."
   },
-  "permissions": [
-    "tabs",
-    "https://optc-db.github.io/*"
-  ],
   "content_scripts" : [{
       "matches" : [ "https://optc-db.github.io/*"],
-      "js" : ["popup.js"]
+      "js" : ["app/js/popup.js"]
   }]
 }

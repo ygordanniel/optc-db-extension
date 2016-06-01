@@ -1,0 +1,56 @@
+/*Style CSS*/
+body {
+  font-family: "Open Sans", "Lucida Grande", Tahoma, sans-serif;
+  font-size: 100%;
+}
+.text-center {
+  text-align: center;
+}
+.header {
+  font-size: 20;
+}
+.header-under {
+  color: white;
+  margin-top: -15px;
+}
+.subtitle {
+  color: grey;
+  margin-top: 1px;
+  margin-bottom: 1px;
+}
+.background-blue {
+    background-color: #85C1F5;
+}
+.text-white {
+  color: #ffffff;
+}
+table {
+  border-collapse: collapse;
+  border: 1px solid #ffffff;
+}
+td, th {    
+    border-bottom: 1px solid #ffffff;
+    border-top: 1px solid #ffffff;
+    text-align: left;
+}
+td:nth-child(even), th:nth-child(even){
+  text-align: right;
+}
+td:nth-child(odd), th:nth-child(odd) {
+  text-align: left;
+}
+th {
+  background-color: #527b94;
+  color: #ffffff;
+  text-align: center;
+  width: 100px;
+}
+tr:nth-child(odd) {
+  background-color: #b9cad4;
+}
+tr:nth-child(even) {
+  background-color: #dce4e9;
+}
+tr:hover {
+  background-color: #85a2b4;
+}
