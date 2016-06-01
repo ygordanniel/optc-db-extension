@@ -17,6 +17,7 @@ Any problems, doubts, ideas or sugestions should be said directly to me via the 
   * permissions changed, now is restricted to https://optc-db.github.io/
 * v0.2
   * implemented [Turtle Time API](https://optctimer.com)
+
 ## Additional Information
 
 I'm currently developing this extension by myself and I'm looking for people with good ideas to come join me. If you wanna talk about ideas and maybe help me with the development, hit me up here on [my profile](https://github.com/ygordanniel) or via email: ygordanniel@gmail.com
