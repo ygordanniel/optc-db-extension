@@ -11,14 +11,17 @@ document.addEventListener('DOMContentLoaded', function () {
 	// Focus the input text once the popup is opened.
 	$('[data-name=char_name]').focus();
 
-	$('#turtleTimeTable').html('Table should go here');
-
+	//Call function to show table with turtle times.
 	makeTurtleTimeAPIRequest();
 
+	$('#timezone').html('Timezone: ' + getUserTimezoneString());
+
+	//Call function to show table with turtle times when change the 6th digit of ID.
 	$('[data-action=userDigit]').change(function() {
 		makeTurtleTimeAPIRequest();
 	});
 
+	//Call function to show table with turtle times when change the version.
 	$('#versionForm').change(function() {
 		makeTurtleTimeAPIRequest();
 	});

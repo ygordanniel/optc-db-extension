@@ -8,18 +8,27 @@
     <head>
       <title>OPTC Player Helper</title>
 
+      <!-- CSS for loader when ajax request starts -->
       <link rel="stylesheet" type="text/css" href="loader/loader.css">
+      <!-- Main css -->
       <link rel="stylesheet" type="text/css" href="app/css/app.css">
 
+      <!-- Timezone scrips -->
+      <script src="app/js/moment.js"></script>
+      <script src="app/js/moment-timezone-with-data.js"></script>
+      <!-- JQuery scripts -->
       <script src="app/js/jquery.js"></script>
+      <!-- Main scripts -->
       <script src="app/js/popup.js"></script>
       <script src="app/js/turtle-time.js"></script>
+      <!-- Util scripts -->
+      <script src="app/js/util.js"></script>
 
     </head>
     <body class="background-blue">
       <!-- Page header -->
       <p class="text-center header"><strong>OPTC Player Helper</strong></p>
-      <h6 class="text-center header-under">Version 0.2</h6>
+      <h6 class="text-center header-under">Version 0.2.1</h6>
       <!-- .\Page header -->
       <div class="text-center">
         <!-- Page searcher -->
@@ -39,6 +48,7 @@
         </form>
         </fieldset>
         <br>
+        <h5 id="timezone" style="margin-top: -15px; margin-bottom: 0px;"></h5>
         <div id="turtleTimeTable"></div>
       </div>
       <!-- Loader Div -->

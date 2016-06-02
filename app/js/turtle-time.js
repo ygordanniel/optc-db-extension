@@ -57,19 +57,6 @@ function getIntArrayHourMinutes(timeString) {
 	return hm;
 }
 
-/*****************************************************************************************
- * Get timezone offset of user. Represents the number of minutes ahead or behind the UTC.*
- * Returns positive if timezone is behind and negative if timezone is ahead.	  		 *
- * Examples: 																	  		 *
- * 		UTC + 10 returns -600													  		 *
- * 		UTC - 3 returns 180														  		 *
- *****************************************************************************************/
-function getUserTimezone() {
-	var offset = new Date().getTimezoneOffset();
-	var timezone = (offset / 60);
-	return timezone;
-}
-
 /************************************************************************************
  * Function to convert arrays of date of the year and hour of a day into string 	*
  *		array ["Month DayNumber Year", "Hour:Minute"]								*
@@ -98,7 +85,7 @@ function getStringArrayDateAndTime(ymd, hm) {
 
 	//Set hour and minute with the hm array.
 	//PS: set hour and convert it to the user timezone.
-	hour = hm[0] - (getUserTimezone());
+	hour = hm[0] - (getUserTimezoneOffset());
 	minute = hm[1];
 	//Create date object with year, month, day, hour and minute setted previously.
 	var dateObject = new Date(year, month, day, hour, minute);
@@ -185,10 +172,4 @@ function makeTurtleTimeAPIRequest() {
 			console.log('Error: ' + error);
 		}
 	});
-}
-
-//Method to replace a char passing it index on the string.
-//Credits to http://stackoverflow.com/users/173347/cem-kalyoncu
-String.prototype.replaceAt=function(index, character) {
-    return this.substr(0, index) + character +  this.substr(index+(character.length - (character.length-1)));
 }
