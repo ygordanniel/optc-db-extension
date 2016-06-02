@@ -1,3 +1,12 @@
+/****************************************************************************
+ * Made by: Ygor Danniel													*
+ * https://github.com/ygordanniel											*
+ * About me: I'm a brazilian Computer Science student and I love to code.	*
+ * I'm stating my way on web coding, since feburary, and I'm looking for 	*
+ * every chance I can get to make something usefull. If I can help at least	*
+ * one pearson other than me I'll be very glad.								*
+ ****************************************************************************/
+
 //Method to replace a char passing it index on the string.
 //Credits to http://stackoverflow.com/users/173347/cem-kalyoncu
 String.prototype.replaceAt=function(index, character) {
@@ -59,6 +68,12 @@ function getTimeAsAmPm(timeString) {
 	return hour + ':' + minute + ampm;
 }
 
+/********************************************
+ * Function to get a chrome cookie.			*
+ * param url cookie is referenced to 		*
+ * param name of the cookie 				*
+ * param callback function to be executed 	*
+ *********************************************/
 function getChromeCookies(url, name, callback) {
     chrome.cookies.get({"url": url, "name": name}, function(cookie) {
         if(callback) {
@@ -67,6 +82,12 @@ function getChromeCookies(url, name, callback) {
     });
 }
 
+/********************************************
+ * Function to set a chrome cookie.			*
+ * param url cookie will be reference to 	*
+ * param name of the cookie 				*
+ * param value of the cookie 			 	*
+ *********************************************/
 function setChromeCookies(url, name, value) {
     chrome.cookies.set({
 	    "name": name,

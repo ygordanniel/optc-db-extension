@@ -1,3 +1,12 @@
+/****************************************************************************
+ * Made by: Ygor Danniel													*
+ * https://github.com/ygordanniel											*
+ * About me: I'm a brazilian Computer Science student and I love to code.	*
+ * I'm stating my way on web coding, since feburary, and I'm looking for 	*
+ * every chance I can get to make something usefull. If I can help at least	*
+ * one pearson other than me I'll be very glad.								*
+ ****************************************************************************/
+ 
 /****************************************************************************************
  * Function to convert string into int array of [year, month, day].			   			*
  * param dateString MUST BE a string like "2016-06-01".							   		*
