@@ -27,7 +27,7 @@ Any problems, doubts, ideas or sugestions should be said directly to me via the 
 
 I'd like to send a special thank
 
-The [OPTC-DB Team](https://github.com/optc-db/optc-db.github.io) for the amazing job keeping all the data up to date, I know how hard that can be. In particular to /u/Zee_n1 for talking to me when I decided to make this extension and giving me the blessing to do so.
+The [OPTC-DB Team](https://github.com/optc-db/optc-db.github.io) for the amazing job keeping all the data up to date, I know how hard that can be. In particular to [/u/Zee_n1](https://www.reddit.com/user/Zee_n1) for talking to me when I decided to make this extension and giving me the blessing to do so.
 
 The devs from [Turtle Time](https://optctimer.com) too, for answering my email with the API request.
 
