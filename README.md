@@ -17,6 +17,8 @@ Any problems, doubts, ideas or sugestions should be said directly to me via the 
   * permissions changed, now is restricted to https://optc-db.github.io/
 * v0.2
   * implemented [Turtle Time API](https://optctimer.com)
+* v0.2.1
+  * now showing user's timezone
 
 ##Thank you note
 
