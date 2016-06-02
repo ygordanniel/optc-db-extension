@@ -6,29 +6,31 @@
    -->
   <html>
     <head>
-      <title>OPTC Player Helper</title>
+		<meta charset="UTF-8">
+		<title>OPTC Player Helper</title>
 
-      <!-- CSS for loader when ajax request starts -->
-      <link rel="stylesheet" type="text/css" href="loader/loader.css">
-      <!-- Main css -->
-      <link rel="stylesheet" type="text/css" href="app/css/app.css">
+		<!-- CSS for loader when ajax request starts -->
+		<link rel="stylesheet" type="text/css" href="loader/loader.css">
+		<!-- Main css -->
+		<link rel="stylesheet" type="text/css" href="app/css/app.css">
 
-      <!-- Timezone scrips -->
-      <script src="app/js/moment.js"></script>
-      <script src="app/js/moment-timezone-with-data.js"></script>
-      <!-- JQuery scripts -->
-      <script src="app/js/jquery.js"></script>
-      <!-- Main scripts -->
-      <script src="app/js/popup.js"></script>
-      <script src="app/js/turtle-time.js"></script>
-      <!-- Util scripts -->
-      <script src="app/js/util.js"></script>
+		<!-- Timezone scrips -->
+		<script src="app/js/moment.js"></script>
+		<script src="app/js/moment-timezone-with-data.js"></script>
+		<!-- JQuery scripts -->
+		<script src="app/js/jquery.js"></script>
+		<!-- Main scripts -->
+		<script src="app/js/popup.js"></script>
+		<script src="app/js/turtle-time.js"></script>
+		<script src="app/js/optc-db.js"></script>
+		<!-- Util scripts -->
+		<script src="app/js/util.js"></script>
 
     </head>
     <body class="background-blue">
       <!-- Page header -->
       <p class="text-center header"><strong>OPTC Player Helper</strong></p>
-      <h6 class="text-center header-under">Version 0.2.1</h6>
+      <h6 class="text-center header-under">Version 0.2.2</h6>
       <!-- .\Page header -->
       <div class="text-center">
         <!-- Page searcher -->
@@ -41,11 +43,18 @@
         <p class="text-center"><h4 class="text-white" style="margin-bottom: -15px">Turtle Time</h4></p>
         <input type="number" data-action="userDigit" placeholder="6th digit of ID" min="0" max="9" style="width: 95px;">
         <fieldset>
-          <legend>Version</legend>
-          <form id="versionForm">
-            <input type="radio" name="version" value="japan" checked/>Japan<br>
-            <input type="radio" name="version" value="global"/>Global<br>
-        </form>
+         	<legend>Version</legend>
+        	<form id="versionForm">
+	            <input type="radio" name="version" value="japan" checked/>Japan<br>
+	            <input type="radio" name="version" value="global"/>Global<br>
+        	</form>
+        </fieldset>
+        <fieldset>
+          <legend>Time format</legend>
+        	<form id="timeFormatForm" >
+	            <input type="radio" name="timeformat" value="12"/>12 hours<br>
+	            <input type="radio" name="timeformat" value="24" checked/>24 hours<br>
+        	</form>
         </fieldset>
         <br>
         <h5 id="timezone" style="margin-top: -15px; margin-bottom: 0px;"></h5>

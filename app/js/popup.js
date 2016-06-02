@@ -6,24 +6,45 @@
 // one pearson other than me I'll be very glad.
 
 
-// Adding keyupress event when the windows of the extension is opened
+// Adding event when the windows of the extension is opened
 document.addEventListener('DOMContentLoaded', function () {
 	// Focus the input text once the popup is opened.
 	$('[data-name=char_name]').focus();
+	
+	getChromeCookies('https://optctimer.com/*', "_optcPH-digit", function(cookieValue) {
+	    $('[data-action=userDigit]').val(cookieValue);
+	});
+	getChromeCookies('https://optctimer.com/*', "_optcPH-version", function(cookieValue) {
+	    $('#versionForm input[value=' + cookieValue + ']').prop('checked', true);
+	});
+	getChromeCookies('https://optctimer.com/*', "_optcPH-timeFormat", function(cookieValue) {
+	    $('#timeFormatForm input[value=' + cookieValue + ']').prop('checked', true);
+	});
 
-	//Call function to show table with turtle times.
-	makeTurtleTimeAPIRequest();
+	//Call function to show turtle time table.
+	setTimeout(makeTurtleTimeAPIRequest, 500);
 
 	$('#timezone').html('Timezone: ' + getUserTimezoneString());
 
-	//Call function to show table with turtle times when change the 6th digit of ID.
+	//Call function to show turtle time table when change the 6th digit of ID.
 	$('[data-action=userDigit]').change(function() {
-		makeTurtleTimeAPIRequest();
+		var digit = $(this).val();
+		setChromeCookies('https://optctimer.com/*', '_optcPH-digit', digit);
+		setTimeout(makeTurtleTimeAPIRequest, 500);
 	});
 
-	//Call function to show table with turtle times when change the version.
+	//Call function to show turtle time table when change the version.
 	$('#versionForm').change(function() {
-		makeTurtleTimeAPIRequest();
+		var version = $('input[name=version]:checked', '#versionForm').val();
+		setChromeCookies('https://optctimer.com/*', '_optcPH-version', version);
+		setTimeout(makeTurtleTimeAPIRequest, 500);
+	});
+
+	//Call function to show turtle time table when change the time format to 12 hour or 24 hours.
+	$('#timeFormatForm').change(function() {
+		var timeFormat = $('input[name=timeformat]:checked', '#timeFormatForm').val();
+		setChromeCookies('https://optctimer.com/*', '_optcPH-timeFormat', timeFormat);
+		setTimeout(makeTurtleTimeAPIRequest, 500);
 	});
 
 	// Get input text with data-name = char_name and bind the keypress event to it.
@@ -36,18 +57,11 @@ document.addEventListener('DOMContentLoaded', function () {
 		}
 	});
 
-	$body = $('body');
+	// $body = $('body');
 
-	$(document).on({
-	    ajaxStart: function() { $body.addClass("loading");    },
-	    ajaxStop: function() { $body.removeClass("loading"); }    
-	});
+	// $(document).on({
+	//     ajaxStart: function() { $body.addClass("loading");    },
+	//     ajaxStop: function() { $body.removeClass("loading"); }    
+	// });
+
 });
-
-// Function that make the search call.
-function charSearch(char_name){
-	// Search url creation with the name typed on the input text.
-    var charSearchUrl = "http://optc-db.github.io/characters/#/search/" + char_name;
-    // Open a new tab with the URL to search.
-    chrome.tabs.create({ url: charSearchUrl });
-}

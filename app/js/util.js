@@ -21,3 +21,60 @@ function getUserTimezoneOffset() {
 	var timezone = (offset / 60);
 	return timezone;
 }
+
+/********************************************************************
+ * Function to converte time from 24 hour format to 12 hour format	*
+ * param string of time you wanna convert. timeString must be like 	*
+ *		"15:00" model.												*
+ * return string formated to 12 hour. "03:00 PM"					*
+ ********************************************************************/
+function getTimeAsAmPm(timeString) {
+	//Split string to get hour and minute.
+	var split = timeString.split(':');
+	//Set hour and minute
+	var hour = parseInt(split[0]);
+	var minute = parseInt(split[1]);
+	//Set AM status
+	var ampm = ' AM';
+	//Set PM status if hour is greater than 12.
+	if(hour >= 12){
+		//Subtracts 12 to transform hour to 12 hour format.
+		hour -= 12;
+		//Set PM status
+		ampm = ' PM';
+	}
+	//Set hour and minute string with a 0 before the number if it is smaller than 10.
+	//This condictions are used show time on the default model. "03:00 PM".
+	if(hour < 10){
+		hour = '0' + hour;
+	}
+	if(minute < 10){
+		minute = '0' + minute;
+	}
+	//Condition to set if it is midnight.
+	if(hour == 0){
+		hour = 12;
+	}
+	//Returns time formated
+	return hour + ':' + minute + ampm;
+}
+
+function getChromeCookies(url, name, callback) {
+    chrome.cookies.get({"url": url, "name": name}, function(cookie) {
+        if(callback) {
+            callback(cookie.value);
+        }
+    });
+}
+
+function setChromeCookies(url, name, value) {
+    chrome.cookies.set({
+	    "name": name,
+	    "url": url,
+	    "value": value
+	}, function (cookie) {
+	    console.log(JSON.stringify(cookie));
+	    console.log(chrome.extension.lastError);
+	    console.log(chrome.runtime.lastError);
+	});
+}

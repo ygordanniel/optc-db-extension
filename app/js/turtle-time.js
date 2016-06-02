@@ -68,7 +68,7 @@ function getIntArrayHourMinutes(timeString) {
  *		length is different than 2.													*
  *	return ["Month DayNumber Year", "Hour:Minute"] if arrays are formated correctly	*
  ************************************************************************************/
-function getStringArrayDateAndTime(ymd, hm) {
+function getStringArrayDateAndTime(ymd, hm, timeFormat) {
 	//Validate if ymd length is different than 3
 	if(ymd.length != 3){
 		return 'Array of Year Month Day must follow the model [year, month, day]';
@@ -93,6 +93,11 @@ function getStringArrayDateAndTime(ymd, hm) {
 	var dateOfYear = dateObject.toString().substring(4, 10);
 	//Get string Hour:Minute, e.g, like "15:00"
 	var hourOfDay = dateObject.toString().substring(16, 21);
+	//Validate if the time format is 12 or 24 hours.
+	if(timeFormat == '12'){
+		hourOfDay = getTimeAsAmPm(hourOfDay);
+	}
+
 	//return array with dateOfyear and hourOfDay setted previously.
 	return [dateOfYear, hourOfDay];
 }
@@ -129,7 +134,7 @@ function makeTurtleTimeTable(turtleTimeArray) {
  * param JSON response from server.					*
  * return table to show on the html. 				*
  ****************************************************/
-function getTurtleTimeTable(timeJSON) {
+function getTurtleTimeTable(timeJSON, timeFormat) {
 	//Declaration of array where all the treated data will go to.
 	var turtleTimeArray = new Array();
 	//Interate the JSON response from server.
@@ -144,7 +149,7 @@ function getTurtleTimeTable(timeJSON) {
 		var ymd = getIntArrayYearMonthDay(dateString);
 		var hm = getIntArrayHourMinutes(timeString);
 		//Convert arrays ymd and hm into a single array.
-		var dateTime = getStringArrayDateAndTime(ymd, hm);
+		var dateTime = getStringArrayDateAndTime(ymd, hm, timeFormat);
 		//Push converted array into the turtleTimeArray.
 		turtleTimeArray.push(dateTime);
 	}
@@ -156,17 +161,23 @@ function getTurtleTimeTable(timeJSON) {
  * Get JSON as response and call function to show Turtle Time table *
  ********************************************************************/
 function makeTurtleTimeAPIRequest() {
+	var version = $('input[name=version]:checked', '#versionForm').val();
+	var digit = $('[data-action=userDigit]').val();
+	var timeFormat = $('input[name=timeformat]:checked', '#timeFormatForm').val();
+	console.log(version);
+	console.log(digit);
+	console.log(timeFormat);
 	$.ajax({
 		type: 'GET',
 		url: 'https://optctimer.com/api/turtle',
 		dataType: 'json',
 		data: {
-			'version': $('input[name=version]:checked', '#versionForm').val(),
-			'digit': $('[data-action=userDigit]').val(),
+			'version': version,
+			'digit': digit,
 			'numOfDays': '3'
 		},
 		success: function (data) {
-			$('#turtleTimeTable').empty().html(getTurtleTimeTable(data));
+			$('#turtleTimeTable').empty().html(getTurtleTimeTable(data, timeFormat));
 		},
 		error: function (xhr, error) {
 			console.log('Error: ' + error);

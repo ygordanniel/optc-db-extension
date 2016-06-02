@@ -3,7 +3,7 @@
 
   "name": "OPTC Player Helper",
   "description": "Simple chrome extension to make OPTC players' life a little bit easier.",
-  "version": "0.2.1",
+  "version": "0.2.2",
 
   "browser_action": {
     "default_icon": "icon.png",
@@ -13,5 +13,9 @@
   "content_scripts" : [{
       "matches" : [ "https://optc-db.github.io/*"],
       "js" : ["app/js/popup.js"]
-  }]
+  }],
+  "permissions": [
+    "cookies",
+    "https://optctimer.com/*"
+  ]
 }
