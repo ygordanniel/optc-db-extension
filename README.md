@@ -19,6 +19,9 @@ Any problems, doubts, ideas or sugestions should be said directly to me via the 
   * implemented [Turtle Time API](https://optctimer.com)
 * v0.2.1
   * now showing user's timezone
+* v0.2.2
+  * now users can select time format. (12 ou 24 hours)
+  * setting user's cookies to remember turtle time options
 
 ##Thank you note
 
