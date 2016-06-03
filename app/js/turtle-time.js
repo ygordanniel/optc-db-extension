@@ -6,7 +6,10 @@
  * every chance I can get to make something usefull. If I can help at least	*
  * one pearson other than me I'll be very glad.								*
  ****************************************************************************/
- 
+
+//Cache of the JSON response with the turtle times.
+ var turtleTimeJSON_cache;
+
 /****************************************************************************************
  * Function to convert string into int array of [year, month, day].			   			*
  * param dateString MUST BE a string like "2016-06-01".							   		*
@@ -165,6 +168,22 @@ function getTurtleTimeTable(timeJSON, timeFormat) {
 	return makeTurtleTimeTable(turtleTimeArray);
 }
 
+//Get first turtle time on cache and return it as a Date object.
+function getNextTurtleDate() {
+	//Split date and time.
+	var split = turtleTimeJSON_cache[0].split('T');
+	//Set date.
+	var dateString = split[0];
+	//Set time.
+	var timeString = split[1];
+	//Call functions to get arrays of values originally on string.
+	var ymd = getIntArrayYearMonthDay(dateString);
+	var hm = getIntArrayHourMinutes(timeString);
+	//Convert arrays ymd and hm into a single array.
+	var dateTimeArray = getStringArrayDateAndTime(ymd, hm);
+	return new Date(dateTimeArray[0] + ' ' + new Date().getFullYear() + ' ' + dateTimeArray[1]);
+}
+
 /********************************************************************
  * Function to call the JQuery Ajax request to get the turtle time.	*
  * Get JSON as response and call function to show Turtle Time table *
@@ -186,6 +205,9 @@ function makeTurtleTimeAPIRequest() {
 			'numOfDays': '3'
 		},
 		success: function (data) {
+			//Save JSON response to cache.
+			turtleTimeJSON_cache = data;
+			//Show table with turtle times.
 			$('#turtleTimeTable').empty().html(getTurtleTimeTable(data, timeFormat));
 		},
 		error: function (xhr, error) {

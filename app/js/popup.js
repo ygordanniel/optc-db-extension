@@ -9,7 +9,7 @@
 
 
 // Adding event when the windows of the extension is opened
-document.addEventListener('DOMContentLoaded', function () {
+$(document).ready(function() {
 	// Focus the input text once the popup is opened.
 	$('[data-name=char_name]').focus();
 	
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	//Set 6th digit cookie.
 	$('[data-action=userDigit]').change(function() {
 		var digit = $(this).val();
-		setChromeCookies('https://optctimer.com/*', '_optcPH-digit', digit);
+		setChromeCookies('https://optctimer.com/*', '_optcPH-digit', digit, 3650);
 		setTimeout(makeTurtleTimeAPIRequest, 500);
 	});
 
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	//Set version cookie.
 	$('#versionForm').change(function() {
 		var version = $('input[name=version]:checked', '#versionForm').val();
-		setChromeCookies('https://optctimer.com/*', '_optcPH-version', version);
+		setChromeCookies('https://optctimer.com/*', '_optcPH-version', version, 3650);
 		setTimeout(makeTurtleTimeAPIRequest, 500);
 	});
 
@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	//Set time format cookie.
 	$('#timeFormatForm').change(function() {
 		var timeFormat = $('input[name=timeformat]:checked', '#timeFormatForm').val();
-		setChromeCookies('https://optctimer.com/*', '_optcPH-timeFormat', timeFormat);
+		setChromeCookies('https://optctimer.com/*', '_optcPH-timeFormat', timeFormat, 3650);
 		setTimeout(makeTurtleTimeAPIRequest, 500);
 	});
 
@@ -66,6 +66,10 @@ document.addEventListener('DOMContentLoaded', function () {
 		}
 	});
 
+	setInterval(function() { checkMinutes(50, 0); }, 1000*60);
+	setInterval(function() { checkMinutes(55, 1); }, 1000*60);
+	setInterval(function() { checkMinutes(59, 2); }, 1000*60);
+
 	//Implementation to show loading gif when ajax request starts.
 	//Not needed now.
 	// $body = $('body');
@@ -73,5 +77,11 @@ document.addEventListener('DOMContentLoaded', function () {
 	//     ajaxStart: function() { $body.addClass("loading");    },
 	//     ajaxStop: function() { $body.removeClass("loading"); }    
 	// });
+});
 
+// set up the event listeners to notification
+$(window).load(function() {
+	chrome.notifications.onClosed.addListener(notificationClosed);
+	// chrome.notifications.onClicked.addListener(notificationClicked);
+	// chrome.notifications.onButtonClicked.addListener(notificationBtnClick);
 });
