@@ -36,7 +36,7 @@ I'm currently developing this extension by myself and I'm looking for people wit
 * v0.2.2
   * now users can select time format. (12 ou 24 hours)
   * setting user's cookies to remember turtle time options
- * v0.2.3
+* v0.2.3
   * implemented turtle time notification. It will notify you when turtle isle is 10, 5 and 1 minute away.
   * cookies now are saved for a **LONG** time, it was saved only on session before.
 
