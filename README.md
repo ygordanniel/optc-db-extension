@@ -9,20 +9,6 @@ Simple chrome extension to ~~search characters on OPTC DB~~ make OPTC players' l
 This extention is an independent work and IT'S NOT associated with the [OPTC-DB Team](https://github.com/optc-db/optc-db.github.io).
 Any problems, doubts, ideas or sugestions should be said directly to me via the [reddit thread](https://www.reddit.com/r/OnePieceTC/comments/4l6oxz/optc_db_chrome_extension/) or [reddit profile](https://www.reddit.com/user/ygaum).
 
-## Updates
-
-* v0.1.1
-  * now focusing on input text
-* v0.1.2
-  * permissions changed, now is restricted to https://optc-db.github.io/
-* v0.2
-  * implemented [Turtle Time API](https://optctimer.com)
-* v0.2.1
-  * now showing user's timezone
-* v0.2.2
-  * now users can select time format. (12 ou 24 hours)
-  * setting user's cookies to remember turtle time options
-
 ##Thank you note
 
 I'd like to send a special thank to,
@@ -36,6 +22,20 @@ You guys are **AWESOME**!
 ## Additional Information
 
 I'm currently developing this extension by myself and I'm looking for people with good ideas to come join me. If you wanna talk about ideas and maybe help me with the development, hit me up here on [my profile](https://github.com/ygordanniel) or via email: ygordanniel@gmail.com
+
+## Updates
+
+* v0.1.1
+  * now focusing on input text
+* v0.1.2
+  * permissions changed, now is restricted to https://optc-db.github.io/
+* v0.2
+  * implemented [Turtle Time API](https://optctimer.com)
+* v0.2.1
+  * now showing user's timezone
+* v0.2.2
+  * now users can select time format. (12 ou 24 hours)
+  * setting user's cookies to remember turtle time options
 
 ## TODO list
 
