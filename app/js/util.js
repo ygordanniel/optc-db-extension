@@ -1,4 +1,4 @@
-//**********************************STRING MANIPULATION**********************************/
+/**********************************STRING MANIPULATION**********************************/
 
 /****************************************************************************
  * Made by: Ygor Danniel													*
@@ -225,14 +225,12 @@ var notificationAudio = new Audio('notification/notificationAudio.mp3');
  ****************************************************/
 function audioNotification(play){
 	if(play == 1){
-	    // notificationAudio.play();
 	    notificationAudio.controls = false;
 		notificationAudio.play();
 		document.body.appendChild(notificationAudio);
-		console.log('play');
 	}else{
 		notificationAudio.pause();
 		notificationAudio.currentTime = 0;
-		console.log('stop');
 	}
+}
 }

@@ -13,7 +13,7 @@ $(document).ready(function() {
 	// Focus the input text once the popup is opened.
 	$('[data-name=char_name]').focus();
 	
-	//Look for 6th digit cookie. If find it, set to the respective place.
+	// Look for 6th digit cookie. If find it, set to the respective place.
 	getChromeCookies('https://optctimer.com/*', "_optcPH-digit", function(cookieValue) {
 	    $('[data-action=userDigit]').val(cookieValue);
 	});
